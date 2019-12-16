@@ -1,4 +1,4 @@
-class Config:
+class Config:  # TODO make it so this module parses a config file
     LUNCH_BREAK = 0.5  # In hours. Use decimals if less than one hour
     DAILY_HOURS = 8
     WEEKLY_HOURS = 40

@@ -2,9 +2,9 @@ import json
 from datetime import date
 from typing import Dict
 
-from config import Config
-from days.day import Day
-from data_source.data_source import DataSource
+from hour_monitor.config import Config
+from hour_monitor.days.day import Day
+from hour_monitor.data_source.data_source import DataSource
 
 
 class JsonDataSource(DataSource):

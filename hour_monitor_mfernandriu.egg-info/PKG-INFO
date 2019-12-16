@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: hour-monitor-mfernandriu
+Version: 0.0.1
+Summary: Keep track of your work hours
+Home-page: https://github.com/mfernandriu/hour-monitor
+Author: Andrés Muñoz
+Author-email: munozfernandezandres@gmail.com
+License: UNKNOWN
+Description: # Hour Monitor
+        
+        Hour monitor is a cli that allows to store your work entry and exit hours and see how many hour of work remain per day, 
+        week and month. 
+        
+        ### Requirements
+        
+        python 3.7.5
+        pip 19.3.1
+        
+        ## Tests
+        
+        Run all tests:
+        
+        ~~~
+        pytest .
+        ~~~
+        
+        ### Run
+        
+        You can interact with the app via cli. To do so run the following:
+        
+        ~~~
+        python cli.py --help
+        python cli.py --store_entry --day 16/12/2019 --hour 9:00
+        python cli.py --check_day --day 16/12/2019 --hour 17:30
+        ~~~ 
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

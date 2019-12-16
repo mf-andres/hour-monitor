@@ -1,0 +1,3 @@
+[console_scripts]
+hour_monitor = hour_monitor.cli:main
+

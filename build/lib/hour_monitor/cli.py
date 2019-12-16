@@ -1,6 +1,6 @@
 import click
 
-from hour_monitor import HourMonitor
+from hour_monitor.hour_monitor import HourMonitor
 
 
 @click.command()

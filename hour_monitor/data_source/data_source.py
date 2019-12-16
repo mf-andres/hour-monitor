@@ -1,7 +1,7 @@
 from datetime import date
 from typing import Dict
 
-from days.day import Day
+from hour_monitor.days.day import Day
 
 
 class DataSource:

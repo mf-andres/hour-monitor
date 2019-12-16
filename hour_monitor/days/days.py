@@ -1,9 +1,9 @@
 from datetime import date
 from typing import Dict
 
-from data_source.data_source import DataSource
-from data_source.data_source_factory import DataSourceFactory
-from days.day import Day
+from hour_monitor.data_source.data_source import DataSource
+from hour_monitor.data_source.data_source_factory import DataSourceFactory
+from hour_monitor.days.day import Day
 
 
 class Days:

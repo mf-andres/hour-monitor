@@ -1,7 +1,7 @@
 from datetime import date, time, datetime
 
-from utils import Utils
-from config import Config
+from hour_monitor.utils import Utils
+from hour_monitor.config import Config
 
 
 class Day:

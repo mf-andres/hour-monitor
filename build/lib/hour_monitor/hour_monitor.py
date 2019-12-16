@@ -1,11 +1,11 @@
 import calendar
-from datetime import date, time, timedelta
+from datetime import date, timedelta
 from typing import List
 
-from config import Config
-from days.day import Day
-from days.days import Days
-from utils import Utils
+from hour_monitor.config import Config
+from hour_monitor.days.day import Day
+from hour_monitor.days.days import Days
+from hour_monitor.utils import Utils
 
 
 class HourMonitor:
