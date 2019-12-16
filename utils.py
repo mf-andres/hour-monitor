@@ -12,7 +12,7 @@ class Utils:
 
     @staticmethod
     def hour_to_string(hour: time) -> str:
-        return hour.strftime('%H:%M')
+        return hour.strftime('%-H:%M')
 
     @staticmethod
     def day_date_to_string(day_date: date) -> str:

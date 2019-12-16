@@ -36,7 +36,7 @@ class Day:
         if updated_day.exit_hour is not None:
             self.exit_hour = updated_day.exit_hour
 
-    def to_json_writable_dict(self):
+    def to_json_dict(self):
         json_writable_dict = dict()
         json_writable_dict[self.day_date_attribute_name] = Utils.day_date_to_string(self.day_date)
         if self.entry_hour is not None:
@@ -46,14 +46,14 @@ class Day:
         return json_writable_dict
 
     @staticmethod
-    def create_from_json_dict(self, json_dict):
-        day_date = Utils.to_date(json_dict[self.day_date_attribute_name])
-        if self.entry_hour_attribute_name in json_dict.keys():  # todo refactor conditionals?
-            entry_hour = Utils.to_time(json_dict[self.entry_hour_attribute_name])
+    def create_from_json_dict(json_dict):
+        day_date = Utils.to_date(json_dict[Day.day_date_attribute_name])
+        if Day.entry_hour_attribute_name in json_dict.keys():  # todo refactor conditionals?
+            entry_hour = Utils.to_time(json_dict[Day.entry_hour_attribute_name])
         else:
             entry_hour = None
-        if self.exit_hour_attribute_name in json_dict.keys():
-            exit_hour = Utils.to_time(json_dict[self.exit_hour_attribute_name])
+        if Day.exit_hour_attribute_name in json_dict.keys():
+            exit_hour = Utils.to_time(json_dict[Day.exit_hour_attribute_name])
         else:
             exit_hour = None
         return Day(day_date, entry_hour, exit_hour)

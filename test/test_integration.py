@@ -1,20 +1,19 @@
 import pytest
 
 from hour_monitor import HourMonitor
-from utils import Utils
 
 from test.test_config import TestConfig
 from test.test_utils import TestUtils
 
 
 class TestIntegration:
-    day_date = Utils.to_date("11/3/1996")  # It was a monday
-    next_day_date = Utils.to_date("12/3/1996")
-    next_week_day_date = Utils.to_date("18/3/1996")
-    entry_hour = Utils.to_time("9:00")
-    next_entry_hour = Utils.to_time("9:30")
-    exit_hour = Utils.to_time("17:30")  # 8 hours working day
-    next_exit_hour = Utils.to_time("18:00")
+    day_date = "11/3/1996"  # It was a monday
+    next_day_date = "12/3/1996"
+    next_week_day_date = "18/3/1996"
+    entry_hour = "9:00"
+    next_entry_hour = "9:30"
+    exit_hour = "17:30"  # 8 hours working day
+    next_exit_hour = "18:00"
 
     @pytest.fixture(scope="function")  # todo refactor (one file)
     def set_and_restore_data_dir(self):
@@ -91,3 +90,9 @@ class TestIntegration:
         hour_monitor.remove_day(self.day_date)
         with pytest.raises(Exception):
             hour_monitor.check_entry_hour(self.day_date)
+
+    def test_store_and_check_entry_hour_two_sessions(self, set_and_restore_data_dir, hour_monitor):
+        hour_monitor.store_entry_hour(self.day_date, self.entry_hour)
+        second_hour_monitor = HourMonitor()
+        new_entry_hour = second_hour_monitor.check_entry_hour(self.day_date)
+        assert self.entry_hour == new_entry_hour
